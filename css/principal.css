@@ -1,0 +1,328 @@
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-columns: 20% auto ;
+
+    grid-template-rows: repeat(1, auto);
+    grid-template-areas: "menu contenido"                          
+}
+
+/*AUDIO****************************************************************/
+.contenedorAudio{
+    width: 100vw;
+    height:300px;
+    background-color: #1ED760;
+}
+
+.audio{
+    position: fixed;
+    width: 100vw;
+    height: 300px;
+    bottom: 0;
+}
+
+.iconoAudio{
+    width: 17px;
+}
+
+
+#barra{
+    clear: left;
+    margin-top: 20px;
+    width: 345px;
+    height: 3px;
+    background-color: #000;
+    margin-left: 25px;
+    border-radius: 5px;
+}
+
+#progreso{
+    margin-top: 20px;
+    width: 0;
+    height: 3px;
+    background-color: #000;
+}
+
+#barra p{
+    color: #000;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.pro{
+    float: left;
+}
+
+.dur{
+    float:right
+}
+
+#controles{
+    clear:left;
+    text-align: center;
+    margin-left: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*MENU************************************************************************/
+.contenedor .menu{
+    grid-area: menu ;
+}
+
+.position-fixed{
+    width: 20%;
+    height: 100vh;
+}
+
+.nav li a:hover {
+    border: 2px solid #6d6c6c;
+    color: rgb(255, 255, 255);
+}
+
+a:hover {
+     color: rgb(255, 255, 255);
+    text-decoration: none 
+}
+
+a:visited {
+    color: rgb(255, 255, 255);  
+    text-decoration: none 
+}
+
+/*Contenido de la pagina****************************************************/
+.contenedor .contenido{
+    grid-area: contenido;
+}
+
+.contenido{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-columns: 50% auto ;
+
+    grid-template-rows: repeat(2, auto);
+    grid-template-rows: 100px auto;
+    grid-template-areas: "buscador login"
+                         "contenedorTopTracks contenedorTopTracks"
+                         "contenedorArtistas contenedorArtistas"
+                         "contenedorAlbumes contenedorAlbumes";
+    
+    background-color: #141414;
+
+}
+.contenedorBuscador{
+    grid-area: buscador;
+}
+
+.login{
+    grid-area:login;
+}
+
+/*CARDS*****************************************************************************************/
+
+.tarjeta{
+    padding-top: 10px;
+    background-color: #1F1F1F;
+    position: relative;
+    border-radius: 5%;
+}
+
+.tarjeta:hover{
+    border: #6d6c6c solid 2px;
+}
+
+.botonIr i{
+    font-size: 25px;
+	color: transparent;
+    transition-property: transform,color;
+    transition-duration: .5s;
+    transition-timing-function: ease;   
+}
+
+.botonIr{
+    position: absolute;
+	width: 60px;
+	height: 60px;
+	background: transparent;
+	line-height: 70px;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+    z-index: 1;
+    right: 0%;
+    bottom: 0%;
+    transition-property: transform, background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease;   
+}
+
+.tarjeta:hover .botonIr i{
+    color: rgb(0, 0, 0);
+}
+
+.contenedorCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/*ALBUMES**********************************************************/
+#contenedorAlbumes{
+    grid-area:contenedorAlbumes;
+   
+}
+
+.cardAlbum{
+    height: 280px;
+}
+
+.cardAlbum img{
+    border-radius: 5%;
+}
+
+.cardAlbum:hover .botonIrAlbum{
+    background-color: #1ED760;
+    transform: translate(0px,-115px);  
+}
+
+/*CANCIONES****************************************************************/
+.contenedorTopTracks{
+    padding: 10px; 
+    grid-area: contenedorTopTracks;
+}
+
+.contenedorCancion:hover {
+   border: 2px solid #6d6c6c;
+}
+
+/*CARD ARTISTAS***************************************************************/
+#contenedorArtistas{
+    grid-area: contenedorArtistas;
+}
+
+.cardArtista img{
+    border-radius: 50%;
+}
+
+.cardArtista:hover .botonIrArtista{
+    background-color: #1ED760;
+    transform: translate(0px,-87px);  
+}
+
+/*BUSCADOR*********************************************************** */
+.contenedorBuscador{
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    padding-top: 1%;
+    z-index: 1;
+}
+
+.buscador {
+	position: absolute;
+	left: 20%;
+	top: 15%;
+}
+
+#buscadorArtista {
+    position: relative;
+    background-color:transparent;
+    color: #6d6c6c;
+	outline: none;
+	box-sizing: border-box;
+	height: 45px;
+	width: 0px;
+    padding: 0px 0px; 
+	border-radius: 50px;
+	font-size: 20px;
+	transition: all .7s ease;
+    z-index: 0;
+    
+}
+
+::placeholder {
+	color: #6d6c6c;
+}
+
+.btnBuscador {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 60px;
+	height: 60px;
+	background: #000000;
+	line-height: 70px;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.btnBuscador i {
+	font-size: 25px;
+	color: white;
+	transition: all .7s ease;
+}
+
+.buscador:hover i{
+	transform: rotate(-360deg);
+}
+
+.buscador:hover  .btnBuscador {
+    background-color: #1ED760;
+    transform: translate(-70px,-4px);
+}
+
+.buscador:hover i {
+    color: #000;     
+}
+
+.buscador:hover #buscadorArtista{
+	display: block;
+    width: 350px;
+    background-color:transparent;
+    padding-left: 25px;
+    border: 2px solid #6d6c6c;
+    transform: translate(-70px,0px);
+}
+
+
+#listaArtistas{
+    text-decoration: none;
+    position: relative;
+    top: 65px;
+    left: 50%;
+    width: 360px;
+    transform: translateX(-50%);
+    background:#1F1F1F;
+    overflow: hidden;
+    display: none;
+    border: 2px solid #6d6c6c;
+}
+
+#listaArtistas li {
+    display: block;
+    width: 1200px;
+    color: #ffffff;
+    padding: 12px 20px;
+    
+}
+
+#listaArtistas li:hover{
+    border: 2px solid #6d6c6c;
+}
+
+#listaArtistas li i{
+    margin-right: 10px;
+    color: #777777;
+}
+
+/*FIN BUSCADOR******************************************************************************/
+

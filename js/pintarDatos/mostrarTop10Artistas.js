@@ -30,7 +30,8 @@ export function pintarCanciones(resultado, artistas){
     let nombreArtista=document.createElement("h1")
     nombreArtista.textContent=artistas[index].nombre
     contenedorCanciones.appendChild(nombreArtista)
-    
+
+
     let num=0
     resultado.tracks.forEach(function (cancion){  
         num++
@@ -38,6 +39,7 @@ export function pintarCanciones(resultado, artistas){
         let contenedorCancion=document.createElement("div")
         contenedorCancion.classList.add("row")
         contenedorCancion.classList.add("contenedorCancion")
+
         contenedorCancion.style.height="60px"
         contenedorCancion.id=cancion.preview_url
 

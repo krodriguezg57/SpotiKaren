@@ -27,7 +27,7 @@ pintarArtistas(artistas)
 let contenedorCanciones = document.getElementById("contenedorCanciones")
 let contenedorArtistas =document.getElementById("contenedorArtistas")
 let contenedorAlbumes= document.getElementById("contenedorAlbumes")
-let contenedorAudio=document.getElementsByClassName("contenedorAudio")
+
 
 //item del menu
 let home=document.getElementById("home")
@@ -155,13 +155,37 @@ contenedorAlbumes.addEventListener("click",function(event){
 contenedorCanciones.addEventListener("click", function(event){
     let cancionSeleccionada
     cancionSeleccionada=event.target.parentElement.id
-    let reproductorAudio= document.getElementById("reproductorAudio")
-    reproductorAudio.src=cancionSeleccionada
+    let audio= document.getElementById("audio")
+    audio.src=cancionSeleccionada
 })
 
 
 
 
+let audio= document.getElementById("audio")
+let nombreArtista
+contenedorCanciones.addEventListener("click", function(event){
+    let cancionSeleccionada
+    cancionSeleccionada=event.target.parentElement.id
+    audio.src=cancionSeleccionada
+    console.log(nombreArtista)
+})
+ 
+ 
+let playPause = document.getElementById("btnplay");
+let play =document.getElementById("play")
+let pause=document.getElementById("pause")
+playPause.addEventListener("click", () => {
+  if (audio.paused || audio.ended) {
+    play.style.display="none"
+    pause.style.display="block"
+    audio.play();
+  } else {
+    play.style.display="block"
+    pause.style.display="none"
+    audio.pause();
+  }
+});
 
 
 
